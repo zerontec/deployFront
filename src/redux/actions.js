@@ -2,7 +2,7 @@
 import axios from 'axios';
 import authHeader from '../services/auth-header';
 import authServices from '../services/auth-services'
-const url = process.env.URL
+const URL = 'https://expressjs-postgres-production-bd69.up.railway.app/'
 
 
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
@@ -132,7 +132,7 @@ export function createPropiedad(data) {
   return async function (dispatch) {
 
     try {
-      const res = await axios.post(`${url}propiedad/create`, data, { headers: authHeader() }
+      const res = await axios.post(`${URL}propiedad/create`, data, { headers: authHeader() }
       );
       dispatch({
         type: CREATE_PROPIEDAD,
@@ -159,7 +159,7 @@ export function getAllPropiedades() {
   return async function (dispatch) {
 
     try {
-      const resp = await axios.get(`${url}propiedad/all`, { headers: authHeader(), })
+      const resp = await axios.get(`${URL}propiedad/all`, { headers: authHeader(), })
 
       dispatch({
 
@@ -184,7 +184,7 @@ export function getOnePropiedad({ id }) {
   return async function (dispatch) {
 
     try {
-      const resp = await axios.get(`${url}propiedad/detail-propiedad/${id}`, { headers: authHeader(), }
+      const resp = await axios.get(`${URL}propiedad/detail-propiedad/${id}`, { headers: authHeader(), }
       )
 
       dispatch({
@@ -213,7 +213,7 @@ export function editPropiedad(id, data) {
   return async function (dispatch) {
 
     try {
-      const res = await axios.put(`${url}propiedad/edit/${id} `, data, { headers: authHeader() })
+      const res = await axios.put(`${URL}propiedad/edit/${id} `, data, { headers: authHeader() })
       return dispatch({
         type: UPDATE_PROPIEDAD,
         payload: res.data,
@@ -235,7 +235,7 @@ export function editPropiedad(id, data) {
 export const deletPropiedad = (id) => async (dispatch) => {
 
   try {
-    await axios.delete(`${url}propiedad/deleted/${id}`, { headers: authHeader(), })
+    await axios.delete(`${URL}propiedad/deleted/${id}`, { headers: authHeader(), })
 
     dispatch({
       type: DELETE_PROPIEDAD,
@@ -258,7 +258,7 @@ export const deletPropiedad = (id) => async (dispatch) => {
 
 //   export function deleteProduct(id) {
 //     return async function (dispatch) {
-//         const { data } = await axios.put(`${url_BACK}/product/` + id)
+//         const { data } = await axios.put(`${URL_BACK}/product/` + id)
 //         return dispatch({
 //             type: DELETE_PRODUCT,
 //             payload: data
@@ -276,7 +276,7 @@ export function createUser(data) {
   return async function (dispatch) {
 
     try {
-      const res = await axios.post(`${url}user/create-user`, data, { headers: authHeader() }
+      const res = await axios.post(`${URL}user/create-user`, data, { headers: authHeader() }
       );
       dispatch({
         type: CREATE_USERS,
@@ -303,7 +303,7 @@ export function getAllUsers() {
   return async function (dispatch) {
 
     try {
-      const resp = await axios.get(`${url}user/get-all-users`, { headers: authHeader(), })
+      const resp = await axios.get(`${URL}user/get-all-users`, { headers: authHeader(), })
 
       dispatch({
 
@@ -329,7 +329,7 @@ export function getOneUser({ id }) {
   return async function (dispatch) {
 
     try {
-      const resp = await axios.get(`${url}user/put-user/${id}`, { headers: authHeader(), }
+      const resp = await axios.get(`${URL}user/put-user/${id}`, { headers: authHeader(), }
       )
 
       dispatch({
@@ -356,7 +356,7 @@ export function editUser(id, data) {
   return async function (dispatch) {
 
     try {
-      const res = await axios.put(`${url}user/put-user/${id} `, data, { headers: authHeader() })
+      const res = await axios.put(`${URL}user/put-user/${id} `, data, { headers: authHeader() })
       return dispatch({
         type: UPDATE_USER,
         payload: res.data,
@@ -378,7 +378,7 @@ export function editUser(id, data) {
 export const deleteUser = (id) => async (dispatch) => {
 
   try {
-    await axios.delete(`${url}user/delete-user/${id}`, { headers: authHeader(), })
+    await axios.delete(`${URL}user/delete-user/${id}`, { headers: authHeader(), })
 
     dispatch({
       type: DELETE_USER,
