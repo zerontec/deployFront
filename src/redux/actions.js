@@ -2,7 +2,7 @@
 import axios from 'axios';
 import authHeader from '../services/auth-header';
 import authServices from '../services/auth-services'
-const URL = 'http://localhost:5040/'
+const URL = 'expressjs-postgres-production-bd69.up.railway.app/'
 
 
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
