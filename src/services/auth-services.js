@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "expressjs-postgres-production-bd69.up.railway.app/auth/";
+const API_URL = "https://expressjs-postgres-production-bd69.up.railway.app/auth/";
 
 const register = (name,username, email, password) => {
   return axios.post(API_URL + "register-user", {
